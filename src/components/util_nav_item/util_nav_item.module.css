@@ -1,0 +1,60 @@
+@value blackColor, geryColor,lightGreenColor,redColor,orangeColor,skyblueColor from '../../common/colors.css';
+
+.item {
+  width: 168px;
+  padding: 0 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: geryColor;
+  line-height: 1.6;
+}
+
+.selected {
+  color: blackColor;
+}
+
+.item a {
+  position: relative;
+  display: block;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.item a:hover {
+  color: blackColor;
+}
+
+.item a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  transform: translateX(-50%);
+  transition: width 0.2s linear;
+}
+
+.selected.item a::after {
+  width: 100%;
+}
+
+.category-nongshim::after {
+  background-color: lightGreenColor;
+}
+
+.category-brand::after {
+  background-color: redColor;
+}
+
+.category-noodlefoodle::after {
+  background-color: orangeColor;
+}
+
+.category-recruit::after {
+  background-color: skyblueColor;
+}
+
+.item a:hover::after {
+  width: 100%;
+}

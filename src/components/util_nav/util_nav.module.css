@@ -1,0 +1,9 @@
+.unv {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  max-width: 672px;
+  margin: 0 auto;
+}
