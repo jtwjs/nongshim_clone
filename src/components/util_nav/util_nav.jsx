@@ -41,7 +41,7 @@ const UtilNav = () => {
   }
 
   return (
-    <nav className={styles.unv}>
+    <nav className={styles.unb}>
       <ul className={styles.list}>
         {
           Object.keys(itemInfo).map(key => {

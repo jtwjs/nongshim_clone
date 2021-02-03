@@ -1,5 +1,8 @@
-.unv {
+@value whiteSmokeColor from '../../common/colors.css';
+
+.unb {
   width: 100%;
+  background-color: whiteSmokeColor;
 }
 
 .list {

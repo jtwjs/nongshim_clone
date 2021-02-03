@@ -1,0 +1,122 @@
+@value blackColor,whiteColor,redColor from '../../common/colors.css';
+
+.gnb {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  transition: 0.2s ease-in;
+}
+
+.gnb:hover {
+  background-color: whiteColor;
+}
+
+.gnb:hover * {
+  color: blackColor;
+}
+
+.left-container {
+  padding-left: 20px;
+}
+
+.logo-title {
+  fill: whiteColor;
+}
+
+.gnb:hover .logo-title {
+  fill: blackColor;
+}
+
+.logo-fill {
+  fill: redColor;
+}
+
+.logo-line {
+  fill: whiteColor;
+}
+
+.logo a {
+  display: block;
+  padding: 20px;
+}
+
+.center-container {
+}
+
+.list {
+  display: flex;
+  height: 100%;
+}
+
+.n-live {
+}
+
+.n-live a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.img-default img,
+.img-hover img {
+  height: 33px;
+}
+
+.img-default {
+}
+
+.gnb:hover .img-default {
+  display: none;
+}
+
+.img-hover {
+  display: none;
+}
+
+.gnb:hover .img-hover {
+  display: block;
+}
+
+.right-container {
+  padding-right: 20px;
+}
+
+.util {
+  display: flex;
+  height: 100%;
+  color: whiteColor;
+}
+
+.util li > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 20px 10px;
+  font-size: 1.2rem;
+}
+
+.util li > a > span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.util li > a > span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: redColor;
+  transform: translateX(-50%);
+  transition: width 0.3s linear;
+}
+
+.util li > a:hover > span::after {
+  width: 100%;
+}

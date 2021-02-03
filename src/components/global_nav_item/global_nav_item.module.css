@@ -1,0 +1,37 @@
+@value whiteColor ,redColor from '../../common/colors.css';
+
+.item {
+}
+
+.item a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  font-size: 17px;
+  font-weight: 600;
+  color: whiteColor;
+  word-break: keep-all;
+}
+
+.item a > span {
+  position: relative;
+  display: block;
+  line-height: 1.8;
+}
+
+.item a > span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: redColor;
+  transform: translateX(-50%);
+  transition: width 0.3s linear;
+}
+
+.item a:hover > span::after {
+  width: 100%;
+}
