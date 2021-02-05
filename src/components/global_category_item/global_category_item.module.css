@@ -1,0 +1,68 @@
+@value lightGreyColor, redColor from '../../common/colors.css';
+
+.col {
+  padding: 0 20px;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.col > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid lightGreyColor;
+  padding-right: 10px;
+  line-height: 2;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sub-menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 13px;
+}
+
+.col-2 .sub-menu {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.sub-menu > a {
+  height: 30px;
+  padding: 2px 0;
+}
+
+.col-2 .sub-menu > a {
+  flex-basis: 33%;
+}
+
+.sub-menu > a > span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 100%;
+  font-size: 15px;
+}
+
+.sub-menu > a > span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0.5px;
+  background-color: redColor;
+  transition: width 0.2s linear;
+}
+
+.sub-menu > a:hover > span::after {
+  width: 100%;
+}
