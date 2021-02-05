@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './global_category_item.module.css';
 
-const GlobalCategoryItem = ({category, category:{subMenu}}) => {
+const GlobalCategoryItem = memo(({category, category:{subMenu}}) => {
 
 
   return (
@@ -24,6 +24,6 @@ const GlobalCategoryItem = ({category, category:{subMenu}}) => {
       }
     </div>
   );
-};
+});
 
 export default GlobalCategoryItem;

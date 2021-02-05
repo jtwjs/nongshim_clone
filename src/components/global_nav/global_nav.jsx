@@ -1,11 +1,13 @@
 
 import React, {useState, useCallback} from 'react';
 import GlobalNavItem from '../global_nav_item/global_nav_item';
+import GlobalUtilMenu from '../global_util_menu/global_util_menu';
 import styles from './global_nav.module.css';
 
 const GlobalNav = () => {
   const [isShown, setIsShown] = useState('');
-
+  const [isShowUtilSubMenu, setIsShowUtilSubMenu] = useState('');
+  
   const showCategory = useCallback((title) => {
     setIsShown(title);
   }, []);
@@ -13,6 +15,15 @@ const GlobalNav = () => {
   const hideCategory = useCallback(() => {
     setIsShown('');
   }, []);
+
+  
+  const selectedUtilMenu = (title) => {
+    if(isShowUtilSubMenu) {
+      setIsShowUtilSubMenu('');
+    } else {
+      setIsShowUtilSubMenu(title);
+    } 
+  };
 
   const menuList = [{
     title: '농심소개',
@@ -201,8 +212,48 @@ const GlobalNav = () => {
         }, 
   ];
 
+  const utilMenu = [{
+    title: '검색',
+    icon: 'fas fa-search'
+  },
+  {
+    title: '사용자',
+    icon: 'far fa-user',
+    subMenu: [{
+      title: '로그인',
+      link: '',
+    },
+    {
+      title: '회원가입',
+      link: '',
+      },
+    {
+      title: '마이페이지',
+      link: '',
+    }]
+  },
+  {
+    title: '언어',
+    icon: 'fas fa-globe-asia',
+    subMenu: [{
+      title: 'En',
+      link: '',
+    },{
+      title: 'Cn',
+      link: '',
+    },
+    {
+      title: 'Jp',
+      link: '',
+    }
+    ]
+  }, {
+    title: '사이트맵',
+    icon: 'fas fa-bars'
+  }]
+
   return (
-    <nav className={styles.gnb}>
+    <nav className={styles.gnb}  onMouseLeave={() => setIsShowUtilSubMenu('')}>
       <div className={styles[`left-container`]}>
         <h1 className={styles.logo}>
           <a href="#a" title="main으로 가기">
@@ -237,34 +288,15 @@ const GlobalNav = () => {
       </div>
       <div className={styles['right-container']}>
           <ul className={styles.util}>
-            <li className={styles.search}>
-              <a href="#a" aria-label="검색">
-                <span>
-                <i className="fas fa-search"></i>
-                </span>
-              </a>
-            </li>
-            <li className={styles.user}>
-              <a href="#a" aria-label="사용자"> 
-              <span>
-                <i className="far fa-user"></i>
-                </span>
-              </a>
-            </li>
-            <li className={styles.language}>
-              <a href="#a" aria-label="언어">
-              <span>
-              <i className="fas fa-globe-asia"></i>
-              </span>
-              </a>
-            </li>
-            <li className={styles[`site-map`]}>
-              <a href="#a" aria-label="사이트 맵">
-              <span>
-              <i className="fas fa-bars"></i>
-              </span>
-                </a>
-            </li>
+            {
+              utilMenu.map(menu => 
+                <GlobalUtilMenu 
+                key={menu.title} 
+                menu={menu}
+                isShowUtilSubMenu={isShowUtilSubMenu}
+                onClick={selectedUtilMenu}/>
+              )
+            }
 
           </ul>
       </div>

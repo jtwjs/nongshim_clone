@@ -1,0 +1,98 @@
+@value whiteColor, redColor from '../../common/colors.css';
+
+.util-item {
+  position: relative;
+}
+
+.util-item > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 20px 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.util-item > a > span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.util-item > a > span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: redColor;
+  transform: translateX(-50%);
+  transition: width 0.3s linear;
+}
+
+.util-item > a:hover > span::after {
+  width: 100%;
+}
+
+.util-subMenu {
+  position: absolute;
+  right: 5px;
+  top: 78px;
+  padding-top: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, visibility 0s 0.2s;
+}
+
+.show .util-subMenu {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.util-subMenu::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  border: 5px solid transparent;
+  border-bottom-color: whiteColor;
+  border-right-color: whiteColor;
+  transform: rotate(-135deg);
+}
+
+.util-subMenu ul {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  padding: 26px 35px;
+  background-color: whiteColor;
+}
+
+.util-subMenu a > span {
+  display: block;
+  width: fit-content;
+  padding: 9px 0;
+  font-size: 13px;
+}
+
+.util-subMenu a > span {
+  position: relative;
+}
+
+.util-subMenu a > span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.5px;
+  background-color: redColor;
+  transition: 0.2s linear;
+}
+
+.util-subMenu a:hover > span::after {
+  width: 100%;
+}

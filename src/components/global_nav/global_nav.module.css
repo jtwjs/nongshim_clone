@@ -91,34 +91,3 @@
   height: 100%;
   color: whiteColor;
 }
-
-.util li > a {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 20px 10px;
-  font-size: 1.2rem;
-}
-
-.util li > a > span {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.util li > a > span::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: redColor;
-  transform: translateX(-50%);
-  transition: width 0.3s linear;
-}
-
-.util li > a:hover > span::after {
-  width: 100%;
-}
