@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+@value whiteColor, blackColor, greyColor, lightGreyColor, redColor, whiteSmokeColor from '../../common/colors.css';
+
+.search-box {
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  background-color: whiteColor;
+}
+
+.container {
+  position: relative;
+  max-width: 960px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.search-area {
+  position: relative;
+  height: 80px;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 100%;
+  font-size: 1.6rem;
+}
+
+.search-prepend {
+  left: 0;
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+  padding: 0 60px;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: "Jua", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.input::placeholder {
+  color: greyColor;
+}
+
+.search-append {
+  right: 0;
+  color: lightGreyColor;
+  transition: color 0.3s linear;
+  cursor: pointer;
+}
+
+.search-append:hover {
+  color: blackColor;
+}
+
+.auto-compile {
+  position: absolute;
+  width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: whiteColor;
+}
+
+.auto-compile-list,
+.auto-compile-recent {
+  padding: 18px 20px;
+}
+
+.auto-compile-list {
+  border-bottom: 1px solid lightGreyColor;
+}
+
+.auto-compile-recent {
+  padding-bottom: 30px;
+}
+
+.title {
+  padding-left: 42px;
+  color: greyColor;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 2;
+}
+
+.list a {
+  display: block;
+  padding: 7px 0 7px 42px;
+  font-weight: 600;
+  line-height: 1.375;
+}
+
+.list a:hover {
+  color: redColor;
+  background-color: whiteSmokeColor;
+  transition: 0.3s linear;
+}
