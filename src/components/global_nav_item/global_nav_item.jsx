@@ -3,7 +3,6 @@ import GlobalCategoryItem from '../global_category_item/global_category_item';
 import styles from './global_nav_item.module.css';
 
 const GlobalNavItem = memo(({menu, isShown, showCategory, hideCategory}) => {
-  console.log('---------');
   const {title, link, category} = menu;
   return (
     <li className={`${styles.item} ${isShown === title ? styles.selected : ''}`}
@@ -15,7 +14,7 @@ const GlobalNavItem = memo(({menu, isShown, showCategory, hideCategory}) => {
           {title}
         </span>
       </a>
-      <div className={`${styles.category} ${isShown ? styles.show : ''}`}>
+      <div className={`${styles.category} ${isShown ? styles.show : ''}  `}>
         <div className={styles.container}>
           {
             category.map(item => (

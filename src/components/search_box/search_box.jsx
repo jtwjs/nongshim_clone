@@ -1,7 +1,7 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import styles from './search_box.module.css';
 
-const SearchBox = () => {
+const SearchBox = ({isShowSearchBox, closeSearchBox}) => {
   const formRef = useRef();
   const inputRef = useRef();
   const [recentSearch, setRecentSearch] = useState({});
@@ -22,8 +22,13 @@ const SearchBox = () => {
     formRef.current.reset();
   }
 
+  useEffect(() => {
+    
+  }, []);
+  const display = isShowSearchBox ? styles['open-search'] : '';
+
   return (
-    <div className={styles[`search-box`]}>
+    <div className={`${styles[`search-box`]} ${display}`}>
       <div className={styles.container}>
         <div className={styles[`search-area`]}>
           <div className={`${styles.icon} ${styles[`search-prepend`]}`}>
@@ -33,7 +38,9 @@ const SearchBox = () => {
             <input ref={inputRef} type="text" className={styles.input} placeholder="검색어를 입력하세요"/>
           </form>
           <div className={`${styles.icon} ${styles[`search-append`]}`}>
-          <i className="fas fa-times"></i>
+            <button aria-label="close" onClick={() => closeSearchBox()}>
+              <i className="fas fa-times"></i>
+            </button>
           </div>
         </div>
         <div className={styles[`auto-compile`]}>

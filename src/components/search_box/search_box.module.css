@@ -4,8 +4,13 @@
 .search-box {
   position: absolute;
   top: 45px;
+  display: none;
   width: 100%;
   background-color: whiteColor;
+}
+
+.search-box.open-search {
+  display: block;
 }
 
 .container {
@@ -39,6 +44,7 @@
   width: 100%;
   height: 100%;
   padding: 0 60px;
+  color: blackColor;
 }
 
 .input {
@@ -53,18 +59,23 @@
 }
 
 .input::placeholder {
-  color: greyColor;
+  color: #aaa;
 }
 
 .search-append {
   right: 0;
   color: lightGreyColor;
   transition: color 0.3s linear;
-  cursor: pointer;
 }
 
 .search-append:hover {
   color: blackColor;
+}
+
+.search-append button {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .auto-compile {

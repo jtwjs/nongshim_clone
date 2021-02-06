@@ -3,7 +3,6 @@ import styles from './util_nav_item.module.css';
 
 const UtilNavItem = ({info, onClick}) => {
   const {title, selected, category} = info;
-  console.log(info);
   const onSelected = (e) => {
     e.preventDefault();
     onClick(title);
