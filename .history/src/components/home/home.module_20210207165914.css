@@ -1,0 +1,17 @@
+.home {
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+}
+
+.swiper {
+  display: flex;
+  overflow: hidden;
+}
+
+.swiper-paginagtion {
+  position: absolute;
+}

@@ -1,0 +1,27 @@
+.swiper-item {
+  width: 100vw;
+  height: 100vh;
+}
+
+.background-1 {
+  background: center / cover no-repeat url("../../assets/img/main/home_1.png");
+}
+
+.background-2 {
+  background: center / cover no-repeat url("../../assets/img/main/home_2.png");
+}
+
+.background-3 {
+  background: center / cover no-repeat url("../../assets/img/main/home_3.png");
+}
+
+.background-4 {
+  background: center / cover no-repeat url("../../assets/img/main/home_4.png");
+}
+
+.background-5 {
+  background: center / cover no-repeat url("../../assets/img/main/home_5.jpg");
+}
+
+.content {
+}
