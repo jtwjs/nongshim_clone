@@ -1,34 +1,29 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import GlobalNav from '../global_nav/global_nav';
 import SearchBox from '../search_box/search_box';
 import UtilNav from '../util_nav/util_nav';
 import styles from './header.module.css';
 
-const Header = ({pageY, isScrollUp}) => {
-
+const Header = () => {
   const [isShowSearchBox, setIsShowSearchBox] = useState(false);
   const closeSearchBox = () => {
+    console.log('닫음');
     setIsShowSearchBox(false);
   }
 
   const openSearchBox = () => {
+    console.log('열음');
     setIsShowSearchBox(true);
   }
- 
-  
 
 
   return (
-    <header className={`${styles.header}
-     ${pageY > 125 ? styles.unfixed : '' }
-     ${pageY > 125 && isScrollUp ? styles[`hide-unb`] : ''}
-     `}>
+    <header className={styles.header}>
       <div className={styles.container}>
         <UtilNav/>
         <GlobalNav
         isShowSearchBox={isShowSearchBox}
-          openSearchBox={openSearchBox}
-          pageY={pageY}/>
+          openSearchBox={openSearchBox}/>
         <SearchBox 
           isShowSearchBox={isShowSearchBox}
           closeSearchBox={closeSearchBox}

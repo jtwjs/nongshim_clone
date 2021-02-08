@@ -11,11 +11,6 @@
   transition: 0.2s ease-in;
 }
 
-.gnb.visual-down {
-  background-color: whiteColor;
-  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.07);
-}
-
 .open-search.gnb {
   background-color: whiteColor;
 }
@@ -28,10 +23,6 @@
   color: blackColor;
 }
 
-.gnb.visual-down * {
-  color: blackColor;
-}
-
 .left-container {
   padding-left: 20px;
 }
@@ -41,10 +32,6 @@
 }
 
 .gnb:hover .logo-title {
-  fill: blackColor;
-}
-
-.gnb.visual-down .logo-title {
   fill: blackColor;
 }
 
@@ -92,19 +79,11 @@
   display: none;
 }
 
-.gnb.visual-down .img-default {
-  display: none;
-}
-
 .img-hover {
   display: none;
 }
 
 .gnb:hover .img-hover {
-  display: block;
-}
-
-.gnb.visual-down .img-hover {
   display: block;
 }
 

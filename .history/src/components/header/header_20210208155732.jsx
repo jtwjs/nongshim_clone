@@ -4,8 +4,9 @@ import SearchBox from '../search_box/search_box';
 import UtilNav from '../util_nav/util_nav';
 import styles from './header.module.css';
 
-const Header = ({pageY, isScrollUp}) => {
-
+const Header = () => {
+  const [pageY, setPageY] = useState(0);
+  const [isScrollUp, setIsScrollUp] = useState(false);
   const [isShowSearchBox, setIsShowSearchBox] = useState(false);
   const closeSearchBox = () => {
     setIsShowSearchBox(false);
@@ -14,8 +15,21 @@ const Header = ({pageY, isScrollUp}) => {
   const openSearchBox = () => {
     setIsShowSearchBox(true);
   }
- 
-  
+  console.log(pageY);
+  console.log(isScrollUp);
+  const onScroll = () => {
+    setPageY(pageY => {
+      pageY > window.pageYOffset ? setIsScrollUp(true) : setIsScrollUp(false);
+      return window.pageYOffset;
+    });
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    }
+  }, []);
 
 
   return (
@@ -27,8 +41,7 @@ const Header = ({pageY, isScrollUp}) => {
         <UtilNav/>
         <GlobalNav
         isShowSearchBox={isShowSearchBox}
-          openSearchBox={openSearchBox}
-          pageY={pageY}/>
+          openSearchBox={openSearchBox}/>
         <SearchBox 
           isShowSearchBox={isShowSearchBox}
           closeSearchBox={closeSearchBox}

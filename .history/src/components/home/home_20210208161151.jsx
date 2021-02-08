@@ -105,7 +105,7 @@ const playSwiper = () => {
 }
 
   return (
-    <section className={styles.home}>
+    <section className={styles.home} ref={homeSection}>
       <div className={styles.container}>
         <div className={styles[`swiper-container`]}>
           <ul ref={swiperRef}

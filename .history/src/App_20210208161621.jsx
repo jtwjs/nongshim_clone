@@ -9,6 +9,7 @@ function App() {
   const [pageY, setPageY] = useState(0);
   const [isScrollUp, setIsScrollUp] = useState(false);
   
+  console.log(homeSection);
   console.log(pageY);
   console.log(isScrollUp);
 

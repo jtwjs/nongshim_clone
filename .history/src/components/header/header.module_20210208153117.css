@@ -3,15 +3,10 @@
   top: 0;
   width: 100%;
   z-index: 10;
-  transition: transform 120ms ease-in-out;
 }
 
 .unfixed {
-  transform: translateY(-126px);
-}
-
-.unfixed.hide-unb {
-  transform: translateY(-45px);
+  position: absolute;
 }
 
 .container {

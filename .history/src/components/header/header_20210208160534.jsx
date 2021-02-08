@@ -27,8 +27,7 @@ const Header = ({pageY, isScrollUp}) => {
         <UtilNav/>
         <GlobalNav
         isShowSearchBox={isShowSearchBox}
-          openSearchBox={openSearchBox}
-          pageY={pageY}/>
+          openSearchBox={openSearchBox}/>
         <SearchBox 
           isShowSearchBox={isShowSearchBox}
           closeSearchBox={closeSearchBox}

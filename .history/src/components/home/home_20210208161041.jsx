@@ -6,7 +6,7 @@ import SwiperDot from '../swiper_dot/swiper_dot';
 
 const SWIPER_SPEED = 5000;
 const SWIPER_DELAY = 300;
-const Home = () => {
+const Home = ({homeSection}) => {
   const swiperRef = useRef();
   const [swiperItemWidth, setSwiperItemWidth] = useState(window.innerWidth);
   const [currentSwiper, setCurrentSwiper] = useState(0);
@@ -70,7 +70,6 @@ useEffect(() => {
   }
   
 },[currentSwiper, swiper, isSwiperState]);
-
 useEffect(() => {
   const length = Object.keys(swiper).length;
   const ratio = 100 / length;
@@ -105,7 +104,7 @@ const playSwiper = () => {
 }
 
   return (
-    <section className={styles.home}>
+    <section className={styles.home} ref={homeSection}>
       <div className={styles.container}>
         <div className={styles[`swiper-container`]}>
           <ul ref={swiperRef}

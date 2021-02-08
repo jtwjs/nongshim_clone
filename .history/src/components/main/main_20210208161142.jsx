@@ -1,8 +1,8 @@
-import React, {memo} from 'react';
+import React from 'react';
 import Home from '../home/home';
 import styles from './main.module.css';
 
-const Main = memo(() => {
+const Main = () => {
   return (
     <main className={styles.main}>
       <Home/>
@@ -12,6 +12,6 @@ const Main = memo(() => {
     </main>
   );
 
-});
+};
 
 export default Main;

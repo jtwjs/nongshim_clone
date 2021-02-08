@@ -7,11 +7,7 @@
 }
 
 .unfixed {
-  transform: translateY(-126px);
-}
-
-.unfixed.hide-unb {
-  transform: translateY(-45px);
+  position: absolute;
 }
 
 .container {

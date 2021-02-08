@@ -8,7 +8,6 @@ import Main from './components/main/main';
 function App() {
   const [pageY, setPageY] = useState(0);
   const [isScrollUp, setIsScrollUp] = useState(false);
-  
   console.log(pageY);
   console.log(isScrollUp);
 
