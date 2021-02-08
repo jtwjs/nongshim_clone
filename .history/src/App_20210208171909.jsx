@@ -10,14 +10,15 @@ function App() {
   const [isScrollUp, setIsScrollUp] = useState(false);
   const [isShowButtonTop, setIsShowButtonTop] = useState(false);
   
-  const onScroll = () => {
-    window.pageYOffset > 125 && !isShowButtonTop ? setIsShowButtonTop(true) : setIsShowButtonTop(false);
+  console.log(pageY);
+  console.log(isScrollUp);
 
+  const onScroll = () => {
     setPageY(pageY => {
       pageY > window.pageYOffset ? setIsScrollUp(true) : setIsScrollUp(false);
       return window.pageYOffset;
     });
-    
+    window.pageYOffset > 125 && !isShowButtonTop ? setIsShowButtonTop(true) : setIsShowButtonTop(false);
   }
 
   useEffect(() => {

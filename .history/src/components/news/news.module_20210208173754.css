@@ -1,0 +1,9 @@
+@value whiteColor from '../../common/colors.css';
+
+section {
+  padding-top: 105px;
+}
+
+.news {
+  min-height: 100vh;
+}

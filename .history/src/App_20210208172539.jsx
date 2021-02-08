@@ -10,8 +10,14 @@ function App() {
   const [isScrollUp, setIsScrollUp] = useState(false);
   const [isShowButtonTop, setIsShowButtonTop] = useState(false);
   
+
+  console.log(isShowButtonTop);
   const onScroll = () => {
-    window.pageYOffset > 125 && !isShowButtonTop ? setIsShowButtonTop(true) : setIsShowButtonTop(false);
+    if(window.pageYOffset > 125 && !isShowButtonTop) {
+      setIsShowButtonTop(true);
+    } else if(window.pageYOffset < 125 && isShowButtonTop) {
+      setIsShowButtonTop(false);
+    }
 
     setPageY(pageY => {
       pageY > window.pageYOffset ? setIsScrollUp(true) : setIsScrollUp(false);

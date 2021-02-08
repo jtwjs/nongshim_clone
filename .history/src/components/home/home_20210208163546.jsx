@@ -80,14 +80,14 @@ useEffect(() => {
   swiperRef.current.style.transform = `translateX(-${currentSwiper * ratio}%)`;
   if(currentSwiper === length - 1) {
     setTimeout(() => {
+      console.log('1');
       swiperRef.current.style.transition = '0ms';
+      console.log('2');
       swiperRef.current.style.transform = `translateX(0%)`
-      setTimeout(() => {
-        setCurrentSwiper(0);
-      },10);
+      console.log('3');
+      setCurrentSwiper(0);
+      console.log('4');
     },SWIPER_DELAY * 2);  
-
-
   } else {
     swiperRef.current.style.transition = `${SWIPER_DELAY}ms ease-in-out`;
   }

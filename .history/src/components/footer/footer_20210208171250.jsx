@@ -141,10 +141,8 @@ const Footer = memo(({isShowButtonTop}) => {
           </div>
         </div>
       </div>
-      <button className={`${styles[`button-top`]} ${isShowButtonTop ? styles.active : ''}`}
-       aria-label="back to top"
-       onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-        <i className="fas fa-chevron-up"></i>
+      <button className={`${styles[`button-top`]} ${isShowButtonTop ? styles.active : ''}`} aria-label="back to top">
+        <i class="fas fa-chevron-up"></i>
       </button>
     </footer>
   );

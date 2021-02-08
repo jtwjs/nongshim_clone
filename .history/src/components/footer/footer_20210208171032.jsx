@@ -7,7 +7,7 @@ import youtubeImg from '../../assets/img/footer/youtube.svg';
 import blogImg from '../../assets/img/footer/blog.png';
 import webAccessImg from '../../assets/img/footer/web-accessibility.png';
 
-const Footer = memo(({isShowButtonTop}) => {
+const Footer = memo(() => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const links = [
     {
@@ -141,10 +141,8 @@ const Footer = memo(({isShowButtonTop}) => {
           </div>
         </div>
       </div>
-      <button className={`${styles[`button-top`]} ${isShowButtonTop ? styles.active : ''}`}
-       aria-label="back to top"
-       onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-        <i className="fas fa-chevron-up"></i>
+      <button className={styles[`button-top`]} aria-label="back to top">
+        <i class="fas fa-chevron-up"></i>
       </button>
     </footer>
   );

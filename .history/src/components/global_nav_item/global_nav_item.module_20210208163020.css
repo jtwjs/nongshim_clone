@@ -43,7 +43,6 @@
   height: 0;
   background-color: whiteColor;
   overflow: hidden;
-  box-shadow: 0 1px 4px 1px rgb(0 0 0 / 7%);
   visibility: hidden;
   transition: height 0.3s ease-in-out, visibility 0s linear 0.3s;
 }

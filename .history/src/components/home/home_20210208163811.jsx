@@ -84,7 +84,7 @@ useEffect(() => {
       swiperRef.current.style.transform = `translateX(0%)`
       setTimeout(() => {
         setCurrentSwiper(0);
-      },10);
+      },100);
     },SWIPER_DELAY * 2);  
 
 
