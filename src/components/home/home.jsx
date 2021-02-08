@@ -1,17 +1,17 @@
 import React, {useEffect, useState, useRef, useCallback} from 'react';
 import styles from './home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import SwiperItem from '../swiper_item/swiper_item';
-import SwiperDot from '../swiper_dot/swiper_dot';
+import SliderItem from '../slider_item/slider_item';
+import SliderDot from '../slider_dot/slider_dot';
 
-const SWIPER_SPEED = 5000;
-const SWIPER_DELAY = 300;
+const SLIDER_SPEED = 5000;
+const SLIDER_DELAY = 300;
 const Home = () => {
-  const swiperRef = useRef();
-  const [swiperItemWidth, setSwiperItemWidth] = useState(window.innerWidth);
-  const [currentSwiper, setCurrentSwiper] = useState(0);
-  const [isSwiperState, setIsSwiperState] = useState(true);
-  const [swiper, setSwiper] = useState({
+  const sliderRef = useRef();
+  const [sliderItemWidth, setSliderItemWidth] = useState(window.innerWidth);
+  const [currentSlider, setCurrentSlider] = useState(0);
+  const [isSliderState, setIsSliderState] = useState(true);
+  const [slider, setSlider] = useState({
   
    0: {
       index: 0,
@@ -38,7 +38,7 @@ const Home = () => {
 
   useEffect(() => {
     const setWidth = () => {
-      setSwiperItemWidth(window.innerWidth);
+      setSliderItemWidth(window.innerWidth);
     };
     window.addEventListener('resize', setWidth);
 
@@ -48,7 +48,7 @@ const Home = () => {
   }, [])
 
 useEffect(() => {
-  setSwiper(state => {
+  setSlider(state => {
       const update = {...state};
       const length = Object.keys(update).length;
       update[length + 1] = update[0];
@@ -57,82 +57,82 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-  swiperRef.current.style.width = `${Object.keys(swiper).length * swiperItemWidth}px`;
-},[swiperItemWidth, swiper])
+  sliderRef.current.style.width = `${Object.keys(slider).length * sliderItemWidth}px`;
+},[sliderItemWidth, slider])
 
 useEffect(() => {
-  const nextSwiper = () => {
-      setCurrentSwiper(currentSwiper => currentSwiper + 1);
+  const nextslider = () => {
+      setCurrentSlider(currentSlider => currentSlider + 1);
   };
-  if(isSwiperState) {
-  const interval = setInterval(nextSwiper, SWIPER_SPEED);
+  if(isSliderState) {
+  const interval = setInterval(nextslider, SLIDER_SPEED);
   return () =>  clearInterval(interval);
   }
   
-},[currentSwiper, swiper, isSwiperState]);
+},[currentSlider, slider, isSliderState]);
 
 useEffect(() => {
-  const length = Object.keys(swiper).length;
+  const length = Object.keys(slider).length;
   const ratio = 100 / length;
   
   
 
-  swiperRef.current.style.transform = `translateX(-${currentSwiper * ratio}%)`;
-  if(currentSwiper === length - 1) {
+  sliderRef.current.style.transform = `translateX(-${currentSlider * ratio}%)`;
+  if(currentSlider === length - 1) {
     setTimeout(() => {
-      swiperRef.current.style.transition = '0ms';
-      swiperRef.current.style.transform = `translateX(0%)`
+      sliderRef.current.style.transition = '0ms';
+      sliderRef.current.style.transform = `translateX(0%)`
       setTimeout(() => {
-        setCurrentSwiper(0);
+        setCurrentSlider(0);
       },10);
-    },SWIPER_DELAY * 2);  
+    },SLIDER_DELAY * 2);  
 
 
   } else {
-    swiperRef.current.style.transition = `${SWIPER_DELAY}ms ease-in-out`;
+    sliderRef.current.style.transition = `${SLIDER_DELAY}ms ease-in-out`;
   }
   
 
-}, [currentSwiper, swiper])
+}, [currentSlider, slider])
 
-const changeCurrentSwiper = useCallback((index) => {
-  setCurrentSwiper(index);
+const changeCurrentSlider = useCallback((index) => {
+  setCurrentSlider(index);
 }, []);
 
 
-const pauseSwiper = () => {
-  setIsSwiperState(false);
+const pauseSlider = () => {
+  setIsSliderState(false);
 }
 
-const playSwiper = () => {
-  setIsSwiperState(true);
+const playSlider = () => {
+  setIsSliderState(true);
 }
 
   return (
     <section className={styles.home}>
       <div className={styles.container}>
-        <div className={styles[`swiper-container`]}>
-          <ul ref={swiperRef}
-          className={styles.swiper}>
+        <div className={styles[`slider-container`]}>
+          <ul ref={sliderRef}
+          className={styles.slider}>
             {
-              Object.keys(swiper).map(key => (
-                <SwiperItem key={key} 
-                  item={swiper[key]} 
-                  currentSwiper={currentSwiper}/>
+              Object.keys(slider).map(key => (
+                <SliderItem key={key} 
+                  item={slider[key]} 
+                  currentSlider={currentSlider}/>
               ))
             }            
           </ul>
         </div>
-        <div className={styles[`swiper-pagination`]}>
+        <div className={styles[`slider-pagination`]}>
           <ul className={`${styles.pagination} ${styles.active}`}>
             {
-              Object.keys(swiper).map(key => {
-                if(key === swiper[key].index.toString()) {
+              Object.keys(slider).map(key => {
+                if(key === slider[key].index.toString()) {
                   return (
-                    <SwiperDot key={key} 
-                    currentSwiper={currentSwiper}
-                    swiper={swiper[key]}
-                    onClick={changeCurrentSwiper}
+                    <SliderDot key={key} 
+                    currentSlider={currentSlider}
+                    slider={slider[key]}
+                    onClick={changeCurrentSlider}
                     />
                     )
                 }
@@ -141,12 +141,12 @@ const playSwiper = () => {
             }
           </ul>
           {
-            isSwiperState ? (
-            <button className={styles[`swiper-btn`] } onClick={pauseSwiper}>
+            isSliderState ? (
+            <button className={styles[`slider-btn`] } onClick={pauseSlider}>
               <FontAwesomeIcon icon={["fas", "pause"]}/>
             </button>)
             : 
-            (<button className={styles[`swiper-btn`]} onClick={playSwiper}>
+            (<button className={styles[`slider-btn`]} onClick={playSlider}>
               <FontAwesomeIcon icon={["fas", "play"]}/>
             </button>)}
         </div>

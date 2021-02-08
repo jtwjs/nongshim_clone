@@ -2,7 +2,6 @@
 
 .news {
   position: relative;
-  min-height: 100vh;
   padding-top: 105px;
 }
 
@@ -18,4 +17,9 @@
   background-color: lightGreenColor;
   box-shadow: 1px 1px 4px rgb(0 0 0 / 20%);
   cursor: pointer;
+}
+
+.swiper-container {
+  margin-top: 40px;
+  padding-bottom: 30px;
 }

@@ -11,15 +11,15 @@
   height: 100%;
 }
 
-.swiper-container {
+.slider-container {
   overflow: hidden;
 }
 
-.swiper {
+.slider {
   display: flex;
 }
 
-.swiper-pagination {
+.slider-pagination {
   position: absolute;
   bottom: 80px;
   display: flex;
@@ -33,7 +33,7 @@
   align-items: center;
 }
 
-.swiper-btn {
+.slider-btn {
   color: whiteColor;
   cursor: pointer;
 }

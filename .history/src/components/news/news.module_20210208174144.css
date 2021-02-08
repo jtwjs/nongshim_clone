@@ -1,6 +1,0 @@
-@value whiteColor from '../../common/colors.css';
-
-.news {
-  min-height: 100vh;
-  padding-top: 105px;
-}

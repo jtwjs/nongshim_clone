@@ -1,0 +1,23 @@
+@value redColor, whiteColor from '../../common/colors.css';
+
+.button a {
+  display: flex;
+  justify-content: center;
+  width: 270px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 30px;
+  border: 1px solid redColor;
+  padding: 18px 32px;
+  font-size: 17px;
+  font-weight: 600;
+  color: redColor;
+  line-height: 1.4;
+  background-color: transparent;
+  transition: 0.2s ease-in-out;
+}
+
+.button a:hover {
+  color: whiteColor;
+  background-color: redColor;
+}
