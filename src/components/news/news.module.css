@@ -1,4 +1,4 @@
-@value whiteColor, lightGreenColor from '../../common/colors.css';
+@value whiteColor, lightGreenColor, greyColor, redColor from '../../common/colors.css';
 
 .news {
   position: relative;
@@ -19,7 +19,90 @@
   cursor: pointer;
 }
 
-.swiper-container {
+.news .swiper-container {
   margin-top: 40px;
   padding-bottom: 30px;
+}
+
+.news .swiper-slide {
+  width: 458px;
+}
+
+.news .swiper-slide:nth-child(2n) > .news-item {
+  margin-top: 90px;
+}
+
+.news-item {
+  margin-top: 25px;
+}
+
+.news-item img {
+  display: block;
+  width: 100%;
+  height: 302px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.news-item figcaption {
+  position: relative;
+  padding: 23px 39px 34px;
+}
+
+.news-title {
+  font-size: 1.375rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.news-date {
+  display: block;
+  margin-top: 11px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: greyColor;
+}
+
+.more {
+  position: absolute;
+  bottom: 34px;
+  right: 30px;
+  padding-right: 50px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: greyColor;
+  opacity: 0;
+  transition: opacity 80ms ease-in-out;
+}
+
+.news-item:hover .more {
+  opacity: 1;
+}
+
+.more span {
+  position: relative;
+}
+
+.more span::before,
+.more span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: block;
+  background-color: redColor;
+}
+
+.more span::before {
+  right: -38px;
+  width: 30px;
+  height: 2px;
+}
+
+.more span::after {
+  right: -40px;
+  top: 11px;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  transform: translateY(-50%);
 }

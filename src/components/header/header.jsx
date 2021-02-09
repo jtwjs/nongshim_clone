@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import GlobalNav from '../global_nav/global_nav';
 import SearchBox from '../search_box/search_box';
 import UtilNav from '../util_nav/util_nav';

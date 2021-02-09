@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './intro.module.css';
-import introImg from '../../assets/img/main/intro.png';
-import introImg_m from '../../assets/img/main/intro_m.png';
+import introImg from '../../assets/img/main/intro/intro.png';
+import introImg_m from '../../assets/img/main/intro/intro_m.png';
 import ArticleButton from '../article_button/article_button';
 
 const Intro = () => {
