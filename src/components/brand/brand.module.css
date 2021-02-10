@@ -1,0 +1,97 @@
+@value whiteColor, redColor, whiteSmokeColor, greyColor from '../../common/colors.css';
+
+.brand {
+  padding-top: 150px;
+}
+
+.brand .content {
+  padding-top: 40px;
+  padding-bottom: 86px;
+}
+
+.brand .visual {
+  position: relative;
+  height: 720px;
+  background: center / cover no-repeat url("../../assets/img/main/brand/brand.png");
+}
+
+.brand .visual-text {
+  position: absolute;
+  top: 50%;
+  font-size: 6rem;
+  font-weight: 600;
+  color: whiteColor;
+  line-height: 1.25;
+  text-transform: uppercase;
+  transform: translateY(-50%);
+}
+
+.brands {
+  padding-top: 90px;
+  padding-bottom: 80px;
+  background-color: whiteSmokeColor;
+}
+
+.brand-list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 31px 86px;
+}
+
+.brand-list-item {
+  position: relative;
+  width: 210px;
+  padding-top: 12px;
+}
+
+.brand-list-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: redColor;
+}
+
+.brands .category {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.brands figure {
+  position: relative;
+  display: flex;
+  margin-top: 37px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brands figure img {
+  width: 180px;
+  height: 180px;
+  z-index: 2;
+}
+
+.brands figure::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: whiteColor;
+  z-index: 1;
+}
+
+.brands figcaption {
+  margin-top: 25px;
+  font-size: 1.375rem;
+  line-height: 1.6;
+  color: greyColor;
+  text-align: center;
+}

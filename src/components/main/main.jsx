@@ -4,6 +4,8 @@ import News from '../news/news';
 import Intro from '../intro/intro';
 import styles from './main.module.css';
 import Story from '../story/story';
+import Management from '../management/management';
+import Brand from '../brand/brand';
 
 const Main = memo(() => {
   return (
@@ -12,6 +14,8 @@ const Main = memo(() => {
       <News/>
       <Intro/>
       <Story/>
+      <Management/>
+      <Brand/>
     </main>
   );
 
