@@ -1,0 +1,231 @@
+@value redColor, greyColor, lightGreyColor, greyColor from '../../common/colors.css';
+
+.map {
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+
+.map .content {
+  display: flex;
+  max-width: 1200px;
+  height: 420px;
+  margin: 110px auto 90px;
+  padding: 0 1rem;
+}
+
+.map-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.map-tab::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: lightGreyColor;
+}
+
+.map-scroll {
+  position: absolute;
+  top: 0;
+  top: 59px;
+  left: -2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: redColor;
+  transition: transform 200ms ease-in-out;
+}
+
+.map-scroll_m {
+  display: none;
+}
+
+.map-category {
+  margin-left: 36px;
+}
+
+.map-category li:not(:first-child) {
+  margin-top: 20px;
+}
+.map-category span {
+  display: block;
+  width: max-content;
+  padding: 9px 10px;
+  font-weight: 600;
+  color: greyColor;
+  letter-spacing: 0.03rem;
+  line-height: 1.375;
+  text-transform: uppercase;
+  transition: color 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.map-category span:hover {
+  color: redColor;
+}
+
+.map-category .active span {
+  color: redColor;
+}
+
+.map-content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.map-content::after {
+  content: "";
+  position: absolute;
+  width: 734px;
+  height: 408px;
+  background: center / cover no-repeat url("../../assets/img/main/map/map.png");
+  z-index: -1;
+}
+
+.map-pin {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.pin-item {
+  display: none;
+  width: 100%;
+}
+
+.active.pin-item {
+  display: flex;
+}
+
+.pin-wrap {
+  position: relative;
+  flex-basis: 70%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pin {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 38px;
+  background: center / cover no-repeat url("../../assets/img/main/map/map_pin.png");
+}
+
+.china .pin {
+  top: 13%;
+  left: 38%;
+}
+
+.us .pin {
+  top: 29%;
+  left: 84%;
+}
+
+.japan .pin {
+  top: 30%;
+  left: 48%;
+}
+
+.australia .pin {
+  top: 77%;
+  left: 46%;
+}
+
+.vietnam .pin {
+  top: 44%;
+  left: 37%;
+}
+
+.canada .pin {
+  top: 5%;
+  left: 77%;
+}
+
+.pin-content {
+  position: absolute;
+  padding-top: 13px;
+  word-break: keep-all;
+}
+
+.china .pin-content {
+  top: 27%;
+  left: 10%;
+  width: 480px;
+}
+
+.us .pin-content {
+  top: 23%;
+  left: 20%;
+  width: 480px;
+}
+
+.japan .pin-content {
+  top: 40%;
+  left: 20%;
+  width: 480px;
+}
+
+.australia .pin-content {
+  top: 14%;
+  left: 15%;
+  width: 480px;
+}
+
+.vietnam .pin-content {
+  top: 58%;
+  left: 11%;
+  width: 450px;
+}
+
+.canada .pin-content {
+  top: 17%;
+  left: 10%;
+  width: 550px;
+}
+
+.pin-content dt {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.pin-content dd {
+  margin-top: 17px;
+  font-size: 1.3rem;
+  color: greyColor;
+  line-height: 1.6;
+}
+
+.issue {
+  flex-basis: 30%;
+}
+
+.issue img {
+  border-radius: 8px;
+}
+
+.issue figcaption {
+  padding-top: 26px;
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+
+.issue .enter {
+  display: block;
+  padding-top: 3px;
+}
+.issue figcaption strong {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
