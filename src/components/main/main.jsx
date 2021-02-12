@@ -7,6 +7,7 @@ import Story from '../story/story';
 import Management from '../management/management';
 import Brand from '../brand/brand';
 import Map from '../map/map';
+import Etc from '../etc/etc';
 
 const Main = memo(() => {
   return (
@@ -18,6 +19,7 @@ const Main = memo(() => {
       <Management/>
       <Brand/>
       <Map/>
+      <Etc/>
     </main>
   );
 
