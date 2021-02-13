@@ -1,21 +1,22 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import GlobalNav from '../global_nav/global_nav';
 import SearchBox from '../search_box/search_box';
 import UtilNav from '../util_nav/util_nav';
 import styles from './header.module.css';
 
-const Header = ({pageY, isScrollUp}) => {
-
+const Header = ({pageY, isScrollUp, openSiteMap}) => {
+  
   const [isShowSearchBox, setIsShowSearchBox] = useState(false);
+
   const closeSearchBox = () => {
     setIsShowSearchBox(false);
-  }
+  };
 
   const openSearchBox = () => {
     setIsShowSearchBox(true);
-  }
+  };
  
-  
+
 
 
   return (
@@ -26,6 +27,7 @@ const Header = ({pageY, isScrollUp}) => {
         <GlobalNav
         isShowSearchBox={isShowSearchBox}
           openSearchBox={openSearchBox}
+          openSiteMap={openSiteMap}
           pageY={pageY}/>
         <SearchBox 
           isShowSearchBox={isShowSearchBox}

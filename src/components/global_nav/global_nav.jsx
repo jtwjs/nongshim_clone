@@ -6,7 +6,7 @@ import styles from './global_nav.module.css';
 import nlive_b from '../../assets/img/header/nlive_b.svg';
 import nlive_w from '../../assets/img/header/nlive_w.svg';
 
-const GlobalNav = ({isShowSearchBox, openSearchBox, pageY}) => {
+const GlobalNav = ({isShowSearchBox, openSearchBox, openSiteMap, pageY}) => {
   const [isShown, setIsShown] = useState('');
   const [isShowUtilSubMenu, setIsShowUtilSubMenu] = useState('');
   
@@ -46,6 +46,7 @@ const GlobalNav = ({isShowSearchBox, openSearchBox, pageY}) => {
         } 
         break;
       case '사이트맵':
+        openSiteMap();
         break;
       default: throw new Error(`Not valid title: ${title}`);
     }
