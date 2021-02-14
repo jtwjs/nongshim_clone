@@ -1,4 +1,5 @@
-@value whiteColor, redColor from '../../common/colors.css';
+@value whiteColor,blackColor, redColor from '../../common/colors.css';
+@value tabletSize from '../../common/size.css';
 
 .util-item {
   position: relative;
@@ -72,14 +73,12 @@
 }
 
 .util-subMenu a > span {
+  position: relative;
   display: block;
   width: fit-content;
   padding: 9px 0;
   font-size: 13px;
-}
-
-.util-subMenu a > span {
-  position: relative;
+  color: blackColor;
 }
 
 .util-subMenu a > span::after {
@@ -95,4 +94,30 @@
 
 .util-subMenu a:hover > span::after {
   width: 100%;
+}
+
+@media screen and (max-width: tabletSize) {
+  .util-item:last-child {
+    display: none;
+  }
+
+  .util-item a {
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+
+  .util-item > a > span::after {
+    bottom: -7px;
+  }
+
+  .util-subMenu {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s 0.2s;
+  }
+
+  .show .util-subMenu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-20px);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
 }

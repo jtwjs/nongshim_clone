@@ -1,11 +1,11 @@
-@value blackColor, geryColor,lightGreenColor,redColor,orangeColor,skyblueColor from '../../common/colors.css';
+@value blackColor, greyColor,lightGreenColor,redColor,orangeColor,skyblueColor from '../../common/colors.css';
 
 .item {
-  width: 168px;
+  flex-basis: 25%;
   padding: 0 10px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: geryColor;
+  color: greyColor;
   line-height: 1.6;
 }
 
@@ -26,6 +26,7 @@
 
 .item a::after {
   content: "";
+
   position: absolute;
   left: 50%;
   bottom: 0;

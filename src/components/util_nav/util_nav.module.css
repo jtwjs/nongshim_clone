@@ -1,4 +1,5 @@
 @value whiteSmokeColor from '../../common/colors.css';
+@value tabletSize from '../../common/size.css';
 
 .unb {
   width: 100%;
@@ -10,4 +11,10 @@
   display: flex;
   max-width: 672px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: tabletSize) {
+  .unb {
+    display: none;
+  }
 }

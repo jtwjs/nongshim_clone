@@ -1,5 +1,5 @@
 @value lightGreyColor, redColor from '../../common/colors.css';
-
+@value tabletSize from '../../common/size.css';
 .col {
   padding: 0 20px;
 }
@@ -65,4 +65,44 @@
 
 .sub-menu > a:hover > span::after {
   width: 100%;
+}
+
+@media screen and (max-width: tabletSize) {
+  .col {
+    margin: 4px 0;
+    padding: 0;
+  }
+  .col-2 {
+    grid-column: span 1;
+  }
+
+  .col > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .col > a > span {
+    padding-right: 10px;
+  }
+
+  .col-icon {
+    font-size: 0.7rem;
+  }
+
+  .sub-menu {
+    display: none;
+  }
+
+  .title {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.9;
+  }
+  .empty {
+    display: none;
+  }
 }

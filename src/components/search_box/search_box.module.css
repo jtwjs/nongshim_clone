@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 @value whiteColor, blackColor, greyColor, lightGreyColor, redColor, whiteSmokeColor from '../../common/colors.css';
+@value tabletSize from '../../common/size.css';
 
 .search-box {
   position: absolute;
@@ -7,6 +8,7 @@
   display: none;
   width: 100%;
   background-color: whiteColor;
+  z-index: 199;
 }
 
 .search-box.open-search {
@@ -118,4 +120,21 @@
   color: redColor;
   background-color: whiteSmokeColor;
   transition: 0.3s linear;
+}
+
+@media screen and (max-width: tabletSize) {
+  .search-box {
+    top: 4px;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: whiteColor;
+    z-index: 199;
+  }
+
+  .auto-compile {
+    height: calc(100% - 80px);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }

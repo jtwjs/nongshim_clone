@@ -8,7 +8,10 @@ const GlobalCategoryItem = memo(({category, category:{subMenu}}) => {
     <div className={`${styles.col} ${subMenu.length > 3 ? styles[`col-2`] : ''}`}>
       <a href={category.link}>
         <span className={styles.title}>{category.title}</span>
-        <i className="fas fa-chevron-circle-right"></i>
+        <span className={styles[`col-icon`]}>
+          <i className={`fas fa-chevron-circle-right ${category.subMenu.length === 0 ? styles.empty : ''} `}>
+          </i>
+        </span>
       </a>
       {
         category.subMenu && 

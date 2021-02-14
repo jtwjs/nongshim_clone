@@ -1,4 +1,5 @@
-@value blackColor,whiteColor,redColor from '../../common/colors.css';
+@value lightGreyColor,blackColor,whiteColor,redColor,lightGreenColor,greyColor from '../../common/colors.css';
+@value tabletSize from '../../common/size.css';
 
 .gnb {
   position: relative;
@@ -6,7 +7,6 @@
   justify-content: space-between;
   width: 100%;
   height: 80px;
-  padding: 0 20px;
   background-color: transparent;
   transition: 0.2s ease-in;
 }
@@ -20,19 +20,17 @@
   background-color: whiteColor;
 }
 
-.gnb:hover {
+.hover.gnb {
   background-color: whiteColor;
 }
 
-.gnb:hover * {
-  color: blackColor;
-}
-
-.gnb.visual-down * {
+.gnb.visual-down li > a {
   color: blackColor;
 }
 
 .left-container {
+  position: relative;
+  display: flex;
   padding-left: 20px;
 }
 
@@ -40,7 +38,7 @@
   fill: whiteColor;
 }
 
-.gnb:hover .logo-title {
+.hover .logo-title {
   fill: blackColor;
 }
 
@@ -61,15 +59,41 @@
   padding: 20px;
 }
 
+.open-btn {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  display: none;
+  font-size: 1.5rem;
+  color: whiteColor;
+  cursor: pointer;
+}
+
 .center-container {
+}
+
+.nav-category {
+  position: relative;
+  display: none;
+  padding-top: 50px;
+  box-shadow: 0 10px 15px rgb(0 0 0 / 15%);
+}
+
+.nav-category .container {
+  padding: 0 28px;
+}
+
+.nav-category .container ul {
+  display: flex;
+  margin-top: 15px;
 }
 
 .list {
   display: flex;
-  height: 100%;
 }
 
-.n-live {
+.hover .list > li > a {
+  color: blackColor;
 }
 
 .n-live a {
@@ -88,7 +112,7 @@
 .img-default {
 }
 
-.gnb:hover .img-default {
+.hover .img-default {
   display: none;
 }
 
@@ -100,7 +124,7 @@
   display: none;
 }
 
-.gnb:hover .img-hover {
+.hover .img-hover {
   display: block;
 }
 
@@ -109,6 +133,7 @@
 }
 
 .right-container {
+  display: flex;
   padding-right: 20px;
 }
 
@@ -116,4 +141,184 @@
   display: flex;
   height: 100%;
   color: whiteColor;
+}
+
+.hover .util > li > a {
+  color: blackColor;
+}
+
+.close-btn {
+  position: absolute;
+  top: 7px;
+  right: 20px;
+  display: none;
+  font-size: 1.5rem;
+  color: greyColor;
+  cursor: pointer;
+}
+
+@media screen and (max-width: tabletSize) {
+  .gnb {
+    flex-direction: column;
+    height: 50px;
+  }
+  .hover.gnb {
+    background-color: unset;
+  }
+
+  .hover.gnb.visual-down {
+    background-color: whiteColor;
+  }
+
+  .left-container {
+    min-width: 100%;
+    z-index: 105;
+  }
+  .logo a {
+    height: 100%;
+    padding: 6.5px;
+  }
+  .logo svg {
+    width: 80px;
+  }
+  .hover .logo-title {
+    fill: whiteColor;
+  }
+
+  .total-menu-open .logo-title {
+    fill: blackColor;
+  }
+
+  .open-btn {
+    display: block;
+  }
+  .visual-down .open-btn {
+    color: blackColor;
+  }
+
+  .total-menu-open .open-btn {
+    display: none;
+  }
+
+  .center-container,
+  .right-container {
+    transform: translateX(100vw);
+  }
+
+  .img-default {
+    display: none;
+  }
+  .img-hover {
+    display: block;
+  }
+
+  .center-container,
+  .right-container {
+    transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  }
+
+  .total-menu-open .center-container,
+  .total-menu-open .right-container {
+    transform: translate(0);
+    transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  }
+
+  .center-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: whiteColor;
+  }
+
+  .nav-category {
+    display: block;
+    z-index: 50;
+  }
+
+  .nav-category::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: lightGreenColor;
+  }
+
+  .list-wrap {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 110px);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .list {
+    flex-direction: column;
+    margin: 25px 28px 58px;
+  }
+  .list > li > a {
+    color: blackColor;
+  }
+
+  .n-live {
+    position: relative;
+    padding-top: 16px;
+    margin-top: 27px;
+  }
+
+  .n-live::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0.5px;
+    background-color: lightGreyColor;
+  }
+
+  .n-live a {
+    padding: 0;
+  }
+
+  .right-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    z-index: 150;
+  }
+
+  .util {
+    position: relative;
+  }
+
+  .util::after {
+    content: "";
+    position: absolute;
+    left: calc(-100vw + 165px);
+    top: 50px;
+    width: 100vw;
+    height: calc(100vw - 50px);
+    background-color: rgba(0, 0, 0, 0);
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  .util-open.util::after {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 120ms 160ms ease-in-out;
+  }
+
+  .total-menu-open .util {
+    margin-right: 50px;
+    color: greyColor;
+  }
+  .hover .util > li > a {
+    color: greyColor;
+  }
+
+  .close-btn {
+    display: block;
+  }
 }

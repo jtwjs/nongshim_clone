@@ -1,8 +1,10 @@
+@value tabletSize from '../../common/size.css';
+
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 30;
+  z-index: 155;
   transition: transform 120ms ease-in-out;
 }
 
@@ -19,4 +21,14 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+@media screen and (max-width: tabletSize) {
+  .unfixed {
+    transform: translateY(-80px);
+  }
+
+  .unfixed.hide-unb {
+    transform: translateY(0);
+  }
 }
