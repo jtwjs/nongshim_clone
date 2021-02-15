@@ -106,7 +106,6 @@ const News = () => {
       </button>
       <h2>내일을 위한 새롭고 활기찬 농심 소식</h2>
       <Swiper
-      spaceBetween={60}
       slidesPerView={'auto'}
       initialSlide={0}
       loop={true}

@@ -1,4 +1,5 @@
 @value redColor, whiteColor from '../../common/colors.css';
+@value tabletSize from '../../common/size.css';
 
 .button a {
   display: flex;
@@ -20,4 +21,15 @@
 .button a:hover {
   color: whiteColor;
   background-color: redColor;
+}
+
+@media screen and (max-width: tabletSize) {
+  .button a {
+    width: 150px;
+    height: 37px;
+    padding: 8px 32px 7px;
+    border-radius: 18.5px;
+    font-size: 15px;
+    line-height: 1.2;
+  }
 }

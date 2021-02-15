@@ -1,4 +1,5 @@
 @value whiteColor, blackColor, greyColor from '../../common/colors.css';
+@value tabletSize from '../../common/size.css';
 
 .story {
   padding-top: 70px;
@@ -72,10 +73,13 @@
 
 .text-item {
   display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 158px;
 }
 
 .active.text-item {
-  display: block;
+  display: flex;
 }
 
 .tag {
@@ -130,4 +134,51 @@
   box-shadow: 0 32px 64px #b0b0b0;
   z-index: 10;
   pointer-events: none;
+}
+
+@media screen and (max-width: tabletSize) {
+  .story {
+    padding-top: 55px;
+    padding-bottom: 60px;
+  }
+
+  .story-view {
+    margin-top: 28px;
+    padding-bottom: 40px;
+  }
+
+  .swiper-container .swiper-slide {
+    width: 185px;
+    height: 372px;
+  }
+
+  .media {
+    margin: 63.5px 17.5px 158.5px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .text-wrap {
+    padding: 226px 18.5px 19px;
+  }
+
+  .text {
+    width: 185px;
+  }
+
+  .text-item {
+    height: 119px;
+  }
+
+  .text-item strong {
+    width: max-content;
+  }
+
+  .phone {
+    width: 185px;
+    height: 372px;
+    border: 5px solid blackColor;
+    border-radius: 25px;
+    box-shadow: 0 16px 32px #b0b0b0;
+  }
 }

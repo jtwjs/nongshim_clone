@@ -1,4 +1,5 @@
 @value whiteColor from '../../common/colors.css';
+@value tabletSize from '../../common/size.css';
 
 .slider-item {
   position: relative;
@@ -56,4 +57,14 @@
   display: block;
   margin-top: 25px;
   font-size: 1.875rem;
+}
+
+@media screen and (max-width: tabletSize) {
+  .slider-item {
+    height: 570px;
+  }
+
+  .content {
+    margin-top: 0;
+  }
 }
