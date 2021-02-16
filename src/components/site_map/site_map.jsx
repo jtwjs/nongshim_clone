@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, memo} from 'react';
 import styles from './site_map.module.css';
 
 
-const SiteMap = ({isOpenSiteMap, closeSiteMap}) => {
+const SiteMap = memo(({isOpenSiteMap, closeSiteMap}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const gnbList = [
     {
@@ -655,6 +655,6 @@ const SiteMap = ({isOpenSiteMap, closeSiteMap}) => {
       </div>
     </div>
   );
-};
+});
 
 export default SiteMap;

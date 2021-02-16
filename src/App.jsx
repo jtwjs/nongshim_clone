@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styles from'./App.module.css';
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
@@ -12,15 +12,15 @@ function App() {
   const [isShowButtonTop, setIsShowButtonTop] = useState(false);
   const [isOpenSiteMap, setIsOpenSiteMap] = useState(false);
 
-  const onScroll = () => {
+  const onScroll = useCallback(() => {
     window.pageYOffset > 125 && !isShowButtonTop ? setIsShowButtonTop(true) : setIsShowButtonTop(false);
 
     setPageY(pageY => {
       pageY > window.pageYOffset ? setIsScrollUp(true) : setIsScrollUp(false);
       return window.pageYOffset;
     });
-    
-  }
+  },[isShowButtonTop]);
+
   const openSiteMap = () => {
     setIsOpenSiteMap(true);
   }
@@ -33,7 +33,7 @@ function App() {
     return () => {
       window.removeEventListener('scroll', onScroll);
     }
-  }, []);
+  }, [onScroll]);
 
   useEffect(() => {
     isOpenSiteMap ? document.documentElement.style.overflow =  'hidden' : document.documentElement.style.overflow = '';

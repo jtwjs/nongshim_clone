@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState, memo} from 'react';
 import GlobalNav from '../global_nav/global_nav';
 import SearchBox from '../search_box/search_box';
 import UtilNav from '../util_nav/util_nav';
 import styles from './header.module.css';
 
-const Header = ({pageY, isScrollUp, openSiteMap}) => {
+const Header = memo(({pageY, isScrollUp, openSiteMap}) => {
   
   const [isShowSearchBox, setIsShowSearchBox] = useState(false);
 
@@ -36,6 +36,6 @@ const Header = ({pageY, isScrollUp, openSiteMap}) => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;

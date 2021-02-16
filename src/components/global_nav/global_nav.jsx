@@ -5,8 +5,234 @@ import GlobalUtilMenu from '../global_util_menu/global_util_menu';
 import styles from './global_nav.module.css';
 import nlive_b from '../../assets/img/header/nlive_b.svg';
 import nlive_w from '../../assets/img/header/nlive_w.svg';
-import UtilNav from '../util_nav/util_nav';
 import UtilNavItem from '../util_nav_item/util_nav_item';
+
+const menuList = [{
+  title: '농심소개',
+  link: '',
+  category: [
+    {title: 'overview',
+      link: '',
+      subMenu: []
+    },
+    {title: '경영이념',
+    link: '',
+    subMenu: [
+        {title: '경영이념', link: ''},
+        {title: '농심 WAY', link: ''}
+      ]
+    },
+    {title: '연혁',
+    link: '',
+      subMenu: []
+    },
+    {title: '세계속의 농심',
+    link: '',
+      subMenu: []
+    },
+    {title: 'CI 소개',
+    link: '',
+      subMenu: []
+    },
+    {title: '농심그룹',
+    link: '',
+      subMenu: [
+        {title: '농심홀딩스', link: ''},
+        {title: '율촌화학', link: ''},
+        {title: '메가마트', link: ''},
+        {title: '태경농산', link: ''},
+        {title: '농심엔지니어링', link: ''},
+        {title: '엔디에스', link: ''},
+        {title: '농심기획', link: ''},
+        {title: '호텔농심', link: ''},
+        {title: '농심개발', link: ''},
+        {title: '농심미분', link: ''},
+        {title: '율촌재단', link: ''},
+      ]
+    },      
+  ]
+  },
+  {
+    title: '지속가능경영',
+    link: '',
+    category: [
+      {title: 'overview',
+      link: '',
+        subMenu: []
+      },
+      {title: '사회공헌',
+      link: '',
+        subMenu: [
+          {title: '사회공헌 활동', link: ''},
+          {title: '율촌재단', link: ''}
+        ]
+      },
+      {title: '연구개발',
+      link: '',
+        subMenu: []
+      },
+      {title: '환경·안전',
+      link: '',
+        subMenu: []
+      },
+      {title: '동반성장',
+      link: '',
+        subMenu: []
+      },
+      {title: '준법경영',
+      link: '',
+        subMenu: []
+      },      
+      {title: '소비자중심경영',
+      link: '',
+        subMenu: []
+      },      
+    ]
+    },
+    {
+      title: '홍보센터',
+      link: '',
+      category: [
+        {title: 'overview',
+        link: '',
+          subMenu: []
+        },
+        {title: '농시미 이벤트',
+        link: '',
+          subMenu: [
+            {title: '진행중 이벤트', link: ''},
+            {title: '포인트마켓', link: ''}
+          ]
+        },
+        {title: '농심 소식',
+        link: '',
+          subMenu: []
+        },
+        {title: '농심 TV',
+        link: '',
+          subMenu: []
+        },
+        {title: 'N.서포터즈',
+        link: '',
+          subMenu: []
+        },
+        {title: '라면피디아',
+        link: '',
+          subMenu: []
+        },      
+      ]
+      },
+      {
+        title: '투자정보',
+        link: '',
+        category: [
+          {title: 'overview',
+          link: '',
+            subMenu: []
+          },
+          {title: '주식에 관한 사항',
+          link: '',
+            subMenu: []
+          },
+          {title: '주가정보',
+          link: '',
+            subMenu: []
+          },
+          {title: 'IR 정보',
+          link: '',
+            subMenu: [
+              {title: '에뉴얼리포트', link: ''},
+              {title: '실적발표자료', link: ''},
+              {title: '수익성', link: ''},
+              {title: '투자자료', link: ''},
+              {title: '요약재무재표', link: ''},
+            ]
+          },
+          {title: '공시정보',
+          link: '',
+            subMenu: [
+              {title: '공시사항', link: ''},
+              {title: '공고자료', link: ''},
+              {title: '공시정보관리규정', link: ''},
+              {title: '공고기간안내', link: ''},
+            ]
+          },
+        ]
+        },
+    {
+      title: '고객지원',
+      link: '',
+      category: [
+        {title: 'overview',
+        link: '',
+          subMenu: []
+        },
+        {title: '상담접수',
+        link: '',
+          subMenu: [
+            {title: '상담접수', link: ''},
+            {title: '상담처리절차', link: ''}
+          ]
+        },
+        {title: '자주 묻는 질문',
+        link: '',
+          subMenu: []
+        },
+        {title: '공장견학',
+        link: '',
+          subMenu: [
+            {title: '견학신청', link: ''},
+            {title: '견학조회', link: ''},
+            {title: '견학후기', link: ''},
+          ]
+        },
+        {title: '오시는길',
+        link: '',
+          subMenu: []
+        },     
+      ]
+      }, 
+];
+
+const utilMenu = [{
+  title: '검색',
+  icon: 'fas fa-search'
+},
+{
+  title: '사용자',
+  icon: 'far fa-user',
+  subMenu: [{
+    title: '로그인',
+    link: '',
+  },
+  {
+    title: '회원가입',
+    link: '',
+    },
+  {
+    title: '마이페이지',
+    link: '',
+  }]
+},
+{
+  title: '언어',
+  icon: 'fas fa-globe-asia',
+  subMenu: [{
+    title: 'En',
+    link: '',
+  },{
+    title: 'Cn',
+    link: '',
+  },
+  {
+    title: 'Jp',
+    link: '',
+  }
+  ]
+}, {
+  title: '사이트맵',
+  icon: 'fas fa-bars'
+}];
 
 const GlobalNav = ({isShowSearchBox, openSearchBox, openSiteMap, pageY}) => {
   const gnbRef = useRef();
@@ -92,232 +318,7 @@ const GlobalNav = ({isShowSearchBox, openSearchBox, openSiteMap, pageY}) => {
   
   };
 
-  const menuList = [{
-    title: '농심소개',
-    link: '',
-    category: [
-      {title: 'overview',
-        link: '',
-        subMenu: []
-      },
-      {title: '경영이념',
-      link: '',
-      subMenu: [
-          {title: '경영이념', link: ''},
-          {title: '농심 WAY', link: ''}
-        ]
-      },
-      {title: '연혁',
-      link: '',
-        subMenu: []
-      },
-      {title: '세계속의 농심',
-      link: '',
-        subMenu: []
-      },
-      {title: 'CI 소개',
-      link: '',
-        subMenu: []
-      },
-      {title: '농심그룹',
-      link: '',
-        subMenu: [
-          {title: '농심홀딩스', link: ''},
-          {title: '율촌화학', link: ''},
-          {title: '메가마트', link: ''},
-          {title: '태경농산', link: ''},
-          {title: '농심엔지니어링', link: ''},
-          {title: '엔디에스', link: ''},
-          {title: '농심기획', link: ''},
-          {title: '호텔농심', link: ''},
-          {title: '농심개발', link: ''},
-          {title: '농심미분', link: ''},
-          {title: '율촌재단', link: ''},
-        ]
-      },      
-    ]
-    },
-    {
-      title: '지속가능경영',
-      link: '',
-      category: [
-        {title: 'overview',
-        link: '',
-          subMenu: []
-        },
-        {title: '사회공헌',
-        link: '',
-          subMenu: [
-            {title: '사회공헌 활동', link: ''},
-            {title: '율촌재단', link: ''}
-          ]
-        },
-        {title: '연구개발',
-        link: '',
-          subMenu: []
-        },
-        {title: '환경·안전',
-        link: '',
-          subMenu: []
-        },
-        {title: '동반성장',
-        link: '',
-          subMenu: []
-        },
-        {title: '준법경영',
-        link: '',
-          subMenu: []
-        },      
-        {title: '소비자중심경영',
-        link: '',
-          subMenu: []
-        },      
-      ]
-      },
-      {
-        title: '홍보센터',
-        link: '',
-        category: [
-          {title: 'overview',
-          link: '',
-            subMenu: []
-          },
-          {title: '농시미 이벤트',
-          link: '',
-            subMenu: [
-              {title: '진행중 이벤트', link: ''},
-              {title: '포인트마켓', link: ''}
-            ]
-          },
-          {title: '농심 소식',
-          link: '',
-            subMenu: []
-          },
-          {title: '농심 TV',
-          link: '',
-            subMenu: []
-          },
-          {title: 'N.서포터즈',
-          link: '',
-            subMenu: []
-          },
-          {title: '라면피디아',
-          link: '',
-            subMenu: []
-          },      
-        ]
-        },
-        {
-          title: '투자정보',
-          link: '',
-          category: [
-            {title: 'overview',
-            link: '',
-              subMenu: []
-            },
-            {title: '주식에 관한 사항',
-            link: '',
-              subMenu: []
-            },
-            {title: '주가정보',
-            link: '',
-              subMenu: []
-            },
-            {title: 'IR 정보',
-            link: '',
-              subMenu: [
-                {title: '에뉴얼리포트', link: ''},
-                {title: '실적발표자료', link: ''},
-                {title: '수익성', link: ''},
-                {title: '투자자료', link: ''},
-                {title: '요약재무재표', link: ''},
-              ]
-            },
-            {title: '공시정보',
-            link: '',
-              subMenu: [
-                {title: '공시사항', link: ''},
-                {title: '공고자료', link: ''},
-                {title: '공시정보관리규정', link: ''},
-                {title: '공고기간안내', link: ''},
-              ]
-            },
-          ]
-          },
-      {
-        title: '고객지원',
-        link: '',
-        category: [
-          {title: 'overview',
-          link: '',
-            subMenu: []
-          },
-          {title: '상담접수',
-          link: '',
-            subMenu: [
-              {title: '상담접수', link: ''},
-              {title: '상담처리절차', link: ''}
-            ]
-          },
-          {title: '자주 묻는 질문',
-          link: '',
-            subMenu: []
-          },
-          {title: '공장견학',
-          link: '',
-            subMenu: [
-              {title: '견학신청', link: ''},
-              {title: '견학조회', link: ''},
-              {title: '견학후기', link: ''},
-            ]
-          },
-          {title: '오시는길',
-          link: '',
-            subMenu: []
-          },     
-        ]
-        }, 
-  ];
-
-  const utilMenu = [{
-    title: '검색',
-    icon: 'fas fa-search'
-  },
-  {
-    title: '사용자',
-    icon: 'far fa-user',
-    subMenu: [{
-      title: '로그인',
-      link: '',
-    },
-    {
-      title: '회원가입',
-      link: '',
-      },
-    {
-      title: '마이페이지',
-      link: '',
-    }]
-  },
-  {
-    title: '언어',
-    icon: 'fas fa-globe-asia',
-    subMenu: [{
-      title: 'En',
-      link: '',
-    },{
-      title: 'Cn',
-      link: '',
-    },
-    {
-      title: 'Jp',
-      link: '',
-    }
-    ]
-  }, {
-    title: '사이트맵',
-    icon: 'fas fa-bars'
-  }]
+ 
   const display = isShowSearchBox ? styles['open-search'] : '';
 
 
@@ -333,12 +334,13 @@ const GlobalNav = ({isShowSearchBox, openSearchBox, openSiteMap, pageY}) => {
   }, [isOpenTotalMenu]);
 
   useEffect(() => {
+    const gnb = gnbRef.current;
     gnbRef.current.addEventListener('mouseover', mouseEnter);
     gnbRef.current.addEventListener('mouseleave', mouseLeave);
 
     return () => {
-      gnbRef.current.removeEventListener('mouseover',mouseEnter);
-      gnbRef.current.removeEventListener('mouseleave', mouseLeave);
+      gnb.removeEventListener('mouseover',mouseEnter);
+      gnb.removeEventListener('mouseleave', mouseLeave);
     }
   }, []);
   

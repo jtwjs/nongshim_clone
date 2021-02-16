@@ -296,7 +296,7 @@
     left: calc(-100vw + 165px);
     top: 50px;
     width: 100vw;
-    height: calc(100vw - 50px);
+    height: calc(100vh - 50px);
     background-color: rgba(0, 0, 0, 0);
     visibility: hidden;
     z-index: -1;

@@ -1,7 +1,7 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useRef, useEffect, memo} from 'react';
 import styles from './search_box.module.css';
 
-const SearchBox = ({isShowSearchBox, closeSearchBox}) => {
+const SearchBox = memo(({isShowSearchBox, closeSearchBox}) => {
   const formRef = useRef();
   const inputRef = useRef();
   const [recentSearch, setRecentSearch] = useState({});
@@ -80,6 +80,6 @@ const SearchBox = ({isShowSearchBox, closeSearchBox}) => {
       </div>
     </div>
   );
-};
+});
 
 export default SearchBox;

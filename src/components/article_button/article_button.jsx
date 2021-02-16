@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './article_button.module.css';
 
-const ArticleButton = ({info}) => {
+const ArticleButton = memo(({info}) => {
   const {title, link} = info;
   return (
     <div className={styles.button}>
@@ -10,6 +10,6 @@ const ArticleButton = ({info}) => {
       </a> 
     </div>
   );
-};
+});
 
 export default ArticleButton;

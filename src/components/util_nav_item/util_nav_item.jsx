@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './util_nav_item.module.css';
 
-const UtilNavItem = ({info, onClick}) => {
+const UtilNavItem = memo(({info, onClick}) => {
   const {title, selected, category} = info;
   const onSelected = (e) => {
     e.preventDefault();
@@ -15,6 +15,6 @@ const UtilNavItem = ({info, onClick}) => {
       </a>
     </li>
   );
-};
+});
 
 export default UtilNavItem;
