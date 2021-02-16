@@ -1,4 +1,5 @@
 @value whiteColor, redColor from '../../common/colors.css';
+@value tabletSize, mobileSize from '../../common/size.css';
 
 .management {
   padding-top: 70px;
@@ -34,7 +35,7 @@
   margin: 0 auto;
   padding: 1rem;
   border-radius: 50%;
-  font-size: 1.625rem;
+  font-size: 26px;
   font-weight: 600;
   line-height: 1.4;
   word-break: keep-all;
@@ -51,19 +52,6 @@
   word-break: keep-all;
 }
 
-.management-list-item:nth-of-type(1) .info {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.management-list-item:nth-of-type(2) .info {
-}
-
-.management-list-item:nth-of-type(3) .info {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
 .management-list .info::before {
   content: "";
   position: absolute;
@@ -72,4 +60,50 @@
   width: 100%;
   height: 2px;
   background-color: redColor;
+}
+
+@media screen and (max-width: tabletSize) {
+  .management {
+    padding-top: 55px;
+  }
+  .management .content {
+    max-width: 720px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .management-list {
+    flex-direction: column;
+    height: 100%;
+    padding: 65px 0 45px;
+  }
+
+  .management-list .subject {
+    width: 105px;
+    height: 105px;
+    font-size: 17px;
+  }
+  .management-list .info {
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 13px;
+    font-size: 15px;
+  }
+
+  .management-list .info::before {
+    left: 7.5px;
+    width: 235px;
+  }
+
+  .management-list-item:not(:first-child) {
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: mobileSize) {
+  .management .content {
+    max-width: 540px;
+  }
 }
