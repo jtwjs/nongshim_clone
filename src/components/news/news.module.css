@@ -16,6 +16,7 @@
   color: whiteColor;
   background-color: lightGreenColor;
   box-shadow: 1px 1px 4px rgb(0 0 0 / 20%);
+  transform: translateX(-50%);
   cursor: pointer;
 }
 

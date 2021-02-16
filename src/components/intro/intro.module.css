@@ -79,6 +79,9 @@
     padding: 0 15px;
   }
 
+  .stock {
+    text-align: center;
+  }
   .item-img {
     margin-right: 0;
     margin-left: 0;
@@ -124,7 +127,6 @@
     width: 175px;
     transform: translateX(-50%);
   }
-
   .intro-item:not(:first-child) {
     margin-top: 35px;
   }
@@ -132,5 +134,9 @@
   .intro-item dd {
     margin-top: 6px;
     padding: 0 5vw;
+  }
+
+  .stock {
+    text-align: left;
   }
 }

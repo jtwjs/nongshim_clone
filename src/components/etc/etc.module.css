@@ -1,4 +1,5 @@
 @value whiteColor,lightGreyColor,lightGreenColor,darkSilverColor, greyColor, davyGreyColor, charcolColor from '../../common/colors.css';
+@value tabletSize, mobileSize from '../../common/size.css';
 
 .etc {
   color: whiteColor;
@@ -18,23 +19,26 @@
 }
 
 .etc-item {
+  position: relative;
   background-color: davyGreyColor;
+  padding: 50px 30px;
 }
 
-.etc-item:first-child {
-  padding: 70px;
-  padding-right: 30px;
+.etc-item a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.etc-item:not(:first-child) {
-  padding: 50px 66px 48px;
+.etc-item a > dl {
+  height: 100%;
 }
-
 .stock {
+  margin-top: 20px;
 }
 
 .stock dt {
-  font-size: 1.125rem;
+  font-size: 18px;
   line-height: 1.3;
   color: lightGreyColor;
 }
@@ -46,15 +50,20 @@
 }
 
 .volume {
+  position: absolute;
+  bottom: 75px;
   display: flex;
-  justify-content: space-between;
-  margin-top: 44px;
-  font-size: 1.175rem;
+  width: 100%;
+  font-size: 18px;
   line-height: 1.3;
 }
 
 .volume li {
   position: relative;
+}
+
+.volume li:not(:first-child) {
+  margin-left: 27px;
 }
 
 .volume li:not(:first-child)::before {
@@ -113,7 +122,7 @@
 }
 
 .desc strong {
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.3;
   text-transform: uppercase;
@@ -121,6 +130,94 @@
 
 .desc span {
   margin-top: 6px;
+  font-size: 16px;
   color: lightGreyColor;
   line-height: 1.6;
+}
+
+@media screen and (max-width: tabletSize) {
+  .etc-item {
+    position: relative;
+    background-color: davyGreyColor;
+    padding: 20px;
+  }
+
+  .volume {
+    flex-direction: column;
+    bottom: 30px;
+    font-size: 16px;
+  }
+
+  .stock {
+    margin-top: 35px;
+  }
+
+  .volume li:not(:first-child) {
+    margin-top: 5px;
+    margin-left: 0;
+  }
+
+  .volume li:not(:first-child)::before {
+    display: none;
+  }
+
+  .desc span {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: mobileSize) {
+  .etc .content {
+    max-width: 540px;
+  }
+
+  .etc-item a {
+    flex-direction: row;
+  }
+
+  .etc-item .stock {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 30px 0 0;
+  }
+
+  .stock dt {
+    font-size: 14px;
+  }
+
+  .etc-list {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 120px);
+  }
+  .etc-item > a > dl {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .volume {
+    position: static;
+    justify-content: center;
+  }
+
+  .icon {
+    width: 65px;
+    height: 65px;
+    margin: 0;
+    margin-right: 20px;
+  }
+
+  .desc {
+    flex-direction: column;
+    margin-top: 0;
+    text-align: start;
+  }
+
+  .desc strong {
+    font-size: 16px;
+  }
+
+  .desc span {
+    font-size: 14px;
+  }
 }

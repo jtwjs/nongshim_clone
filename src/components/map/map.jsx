@@ -6,6 +6,8 @@ import ArticleButton from '../article_button/article_button';
 const Map = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const mapScrollRef = useRef();
+  const mapScrollRef_m = useRef();
+  const tabRef = useRef();
   const tabList = [
     {
       index: 0,
@@ -97,8 +99,11 @@ const Map = () => {
   ]
 
   useEffect(() => {
+    const widthRatio = tabRef.current.offsetWidth / tabList.length + 3;
     mapScrollRef.current.style.transform = `translateY(${60 * currentIndex}px)`;
+    mapScrollRef_m.current.style.transform = `translateX(${widthRatio* currentIndex}px)`;
   }, [currentIndex]);
+
 
   const buttonInfo = {
     title: '세계속의 농심',
@@ -109,10 +114,10 @@ const Map = () => {
     <article className={styles.map}>
       <h2>국경을 뛰어넘는 농심의 맛</h2>
       <div className={styles.content}>
-        <div className={styles[`map-tab`]}>
+        <div className={styles[`map-tab`]} ref={tabRef}>
           <div className={styles[`map-scroll`]} ref={mapScrollRef}>
           </div>
-          <div className={styles[`map-scroll_m`]}>
+          <div className={styles[`map-scroll_m`]} ref={mapScrollRef_m}>
           </div>
           
           <ul className={styles[`map-category`]}>

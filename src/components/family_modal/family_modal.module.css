@@ -1,4 +1,5 @@
 @value whiteColor, lightGreyColor, greyColor, blackColor, greenColor, orangeColor from '../../common/colors.css';
+@value mobileSize from '../../common/size.css';
 
 .family-modal {
   position: absolute;
@@ -161,4 +162,11 @@
 
 .family-modal-box .content > dl > dd > ul > li > a:hover::before {
   width: 100%;
+}
+
+@media screen and (max-width: mobileSize) {
+  .family-modal {
+    bottom: 50%;
+    right: unset;
+  }
 }

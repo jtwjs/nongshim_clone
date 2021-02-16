@@ -163,6 +163,10 @@
 }
 
 @media screen and (max-width: mobileSize) {
+  .brand .content {
+    margin-top: -12px;
+  }
+
   .brand-list {
     max-width: 540px;
   }
