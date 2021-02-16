@@ -11,7 +11,7 @@ import Etc from '../etc/etc';
 
 const Main = memo(() => {
   return (
-    <main className={styles.main}>
+  <main className={styles.main}>
       <Home/>
       <News/>
       <Intro/>
