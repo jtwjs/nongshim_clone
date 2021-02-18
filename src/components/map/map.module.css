@@ -382,7 +382,7 @@
   }
 
   .map-category > li {
-    font-size: 1vw;
+    font-size: 2.5vw;
   }
 
   .map-category > li > span {
@@ -433,6 +433,7 @@
 
   .issue img {
     width: 150px;
+    height: 150px;
   }
 
   .issue figcaption {
