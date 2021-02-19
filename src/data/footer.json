@@ -1,0 +1,156 @@
+{
+  "familySite": [
+    {
+      "title": "그룹사",
+      "category": [
+        {
+          "title": "농심홀딩스",
+          "link": ""
+        },
+        {
+          "title": "율촌화학",
+          "link": ""
+        },
+        {
+          "title": "메가마트",
+          "link": ""
+        },
+        {
+          "title": "태경농산",
+          "link": ""
+        },
+        {
+          "title": "농심엔지니어링",
+          "link": ""
+        },
+        {
+          "title": "NDS",
+          "link": ""
+        },
+        {
+          "title": "농심기획",
+          "link": ""
+        },
+        {
+          "title": "호텔농심",
+          "link": ""
+        },
+        {
+          "title": "농심개발",
+          "link": ""
+        },
+        {
+          "title": "농심미분",
+          "link": ""
+        },
+        {
+          "title": "율촌재단",
+          "link": ""
+        },
+        {
+          "title": "",
+          "link": ""
+        },
+        {
+          "title": "농심미국",
+          "link": ""
+        },
+        {
+          "title": "농심중국",
+          "link": ""
+        },
+        {
+          "title": "농심일본",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "title": "브랜드",
+      "category": [
+        {
+          "title": "새우깡",
+          "link": ""
+        },
+        {
+          "title": "신라면",
+          "link": ""
+        },
+        {
+          "title": "백산수",
+          "link": ""
+        },
+        {
+          "title": "코코이찌방야",
+          "link": ""
+        },
+        {
+          "title": "식문화연구",
+          "link": ""
+        },
+        {
+          "title": "식문화전문도서관",
+          "link": ""
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "title": "상담접수",
+      "link": "" 
+      },
+    {
+      "title": "FAQ",
+      "link": "" 
+        },
+    {
+      "title": "오시는길",
+      "link": "" 
+        },
+    {
+      "title": "이용약관",
+      "link": "" 
+      },
+    {
+      "title": "개인정보처리방침",
+      "link": "" ,
+      "color": "green"
+        },
+    {
+      "title": "특약점포탈",
+      "link": "",
+      "color": "orange"
+        },
+    {
+      "title": "전자결제",
+      "link": "" 
+      },
+    {
+      "title": "증명서조회",
+      "link": "" 
+        },
+    {
+      "title": "이메일주소무단수집거부",
+      "link": "" 
+        }
+  ],
+  "social" : [
+    {
+      "title": "facebook",
+      "link": "https://www.facebook.com/nongshim"
+    },
+    {
+      "title": "instagram",
+      "link": "https://www.instagram.com/nongshim/"
+    },
+    {
+      "title": "youtube",
+      "link": "http://www.youtube.com/user/nongshimPR"
+    },
+    {
+      "title": "blog",
+      "link": "http://blog.naver.com/nongshimblog"
+    }
+  ]
+}

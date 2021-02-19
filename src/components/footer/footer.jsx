@@ -6,50 +6,14 @@ import instargramImg from '../../assets/img/footer/instagram.svg';
 import youtubeImg from '../../assets/img/footer/youtube.svg';
 import blogImg from '../../assets/img/footer/blog.png';
 import webAccessImg from '../../assets/img/footer/web-accessibility.png';
+import footerData from '../../data/footer.json';
+
+const imgList = [facebookImg,instargramImg,youtubeImg,blogImg];
 
 const Footer = memo(({isShowButtonTop}) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const links = [
-    {
-      title: '상담접수',
-      link: '' 
-      },
-    {
-      title: 'FAQ',
-      link: '' 
-        },
-    {
-      title: '오시는길',
-      link: '' 
-        },
-    {
-      title: '이용약관',
-      link: '' 
-      },
-    {
-      title: '개인정보처리방침',
-      link: '' ,
-      color: 'green'
-        },
-    {
-      title: '특약점포탈',
-      link: '',
-      color: `orange`,
-        },
-    {
-      title: '전자결제',
-      link: '' 
-      },
-    {
-      title: '증명서조회',
-      link: '' 
-        },
-    {
-      title: '이메일주소무단수집거부',
-      link: '' 
-        },
-     ]
-  const linksList = links.map(item => (
+
+  const linksList = footerData.links.map(item => (
     <li key={item.title}>
       <a href={item.link}
        className={item.color ? styles[item.color] : ''}>
@@ -63,32 +27,11 @@ const Footer = memo(({isShowButtonTop}) => {
       <li key={item}>{item}</li>
     ));
 
-    const social = [
-      {
-        title: 'facebook',
-        link: 'https://www.facebook.com/nongshim',
-        img: facebookImg,
-      },
-      {
-        title: 'instagram',
-        link: 'https://www.instagram.com/nongshim/',
-        img: instargramImg,
-      },
-      {
-        title: 'youtube',
-        link: "http://www.youtube.com/user/nongshimPR",
-        img: youtubeImg,
-      },
-      {
-        title: 'blog',
-        link: 'http://blog.naver.com/nongshimblog',
-        img: blogImg,
-      }];
 
-    const socialList = social.map(item => (
+    const socialList = footerData.social.map((item, index) => (
       <li key={item.title}>
         <a href={item.link} target="_blank" title={item.title} rel='noreferrer'>
-          <img src={item.img} alt={item.title}/>
+          <img src={imgList[index]} alt={item.title}/>
         </a>
       </li>
     ))

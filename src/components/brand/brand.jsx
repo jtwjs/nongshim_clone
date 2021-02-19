@@ -1,5 +1,6 @@
 import React from 'react';
 import ArticleButton from '../article_button/article_button';
+import mainData from '../../data/main.json';
 import styles from './brand.module.css';
 import brand_0 from '../../assets/img/main/brand/brand_0.png';
 import brand_1 from '../../assets/img/main/brand/brand_1.png';
@@ -8,33 +9,7 @@ import brand_3 from '../../assets/img/main/brand/brand_3.png';
 
 const Brand = () => {
 
-  const brands = [
-    {
-      id:0,
-      category: 'instant noodles',
-      img: brand_0,
-      text: '한국의 맛으로 세계와 소통하다',
-    },
-    {
-      id:1,
-      category: 'snacks',
-      img: brand_1,
-      text: '장수 브랜드의 역사를 창조하다',
-    },
-    {
-      id:2,
-      category: 'beverages',
-      img: brand_2,
-      text: '프리미엄 생수 브랜드의 미래를 열다',
-    },
-    {
-      id:3,
-      category: 'import brand',
-      img: brand_3,
-      text: '세계일류의 다양한 맛을 즐기다',
-    },
-  ]
-
+  const imgList = [brand_0, brand_1, brand_2, brand_3];
   const buttonInfo = {
     title: '브랜드관',
     link: '',
@@ -49,11 +24,11 @@ const Brand = () => {
         <div className={styles.brands}>
           <ul className={styles[`brand-list`]}>
               {
-                brands.map(item => (
+                mainData.brand.map((item,idx )=> (
                   <li key={item.id} className={styles[`brand-list-item`]}>
                     <h3 className={styles.category}>{item.category}</h3>
                     <figure>
-                      <img src={item.img} alt=''/>
+                      <img src={imgList[idx]} alt=''/>
                       <figcaption>
                         {item.text}
                       </figcaption>
